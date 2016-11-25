@@ -16,8 +16,7 @@ public abstract class AbstractMenu implements java.io.Serializable {
 	private String plato1;
 	private String plato2;
 	private String postre;
-	private Date fecha;
-	
+	private Date fecha;	
 	//INI NUEVO WORD
 	private String descripcion1;
 	private String descripcion2;
