@@ -1,0 +1,22 @@
+<weblogic-web-app>
+	
+	<prefer-application-packages>
+		<package-name>antlr.*</package-name>
+		<package-name>javax.ws.*</package-name>
+		<package-name>org.apache.*</package-name>
+		<package-name>org.hibernate.*</package-name>
+		<package-name>org.springframework.util.*</package-name>
+		<package-name>com.sun.org.apache.xerces.internal.jaxp.*</package-name>
+	</prefer-application-packages>
+	<container-descriptor>
+        <show-archived-real-path-enabled>true</show-archived-real-path-enabled>
+      </container-descriptor>
+       
+	<prefer-web-inf-classes>true</prefer-web-inf-classes>
+
+	<session-descriptor> 
+		<cookie-http-only>false</cookie-http-only> 
+	</session-descriptor> 
+	
+</weblogic-web-app>
+

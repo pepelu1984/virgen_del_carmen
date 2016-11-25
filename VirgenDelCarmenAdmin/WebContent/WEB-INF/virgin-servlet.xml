@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+>
+<description></description>
+
+
+	<bean id="context" class="com.dynamicdroides.services.tools.SpringApplicationContext"/>
+	
+<!-- TRANSACTIONS -->
+
+	
+
+<!-- CONTROLLERS -->
+	
+	
+<bean name="/login.vdc" class="com.dynamicdroides.vdc.services.login.controllers.LoginController" scope="request">
+		
+</bean>
+	
+	<bean name="/index.vdc" class="com.dynamicdroides.vdc.services.login.controllers.IndexController" scope="request">
+		<property name="business"><ref bean="virgenBusiness"/></property>
+	</bean>
+	<bean name="/plantilla.vdc" class="com.dynamicdroides.vdc.services.login.controllers.PlantillaController" scope="request">
+		<property name="business"><ref bean="virgenBusiness"/></property>
+		<property name="pathImagenes">
+		    <value>${services.imagenes.path}</value>
+	    </property>
+		<property name="pathPlantilla">
+		    <value>${services.plantilla.semanal.path}</value>
+	    </property>
+	    <property name="pathPlantillaDiaria">
+		    <value>${services.plantilla.diaria.path}</value>
+	    </property>
+	</bean>
+		
+	<bean name="/search.vdc" class="com.dynamicdroides.vdc.services.login.controllers.SearchController" scope="request">
+		<property name="business"><ref bean="virgenBusiness"/></property>
+	</bean>
+	<bean name="/cursos.vdc" class="com.dynamicdroides.vdc.services.login.controllers.CursosController" scope="request">
+		<property name="business"><ref bean="virgenBusiness"/></property>
+	</bean>
+	<bean name="/asistencia.vdc" class="com.dynamicdroides.vdc.services.login.controllers.AsistenciaController" scope="request">
+		<property name="asistenciaBusiness"><ref bean="asistenciaBusiness"/></property>
+   		<property name="extractor"><ref bean="wordExtractor"/></property>
+		<property name="pathToWords">
+		    <value>${services.word.path}</value>
+	    </property>
+   		<property name="alumnosDAO"><ref bean="alumnosDAO"/></property>
+		<property name="usuariosDAO"><ref bean="usuariosDAO"/></property>	    
+				    
+	</bean>
+	
+		<bean name="/comportamiento.vdc" class="com.dynamicdroides.vdc.services.login.controllers.ComportamientosController" scope="request">
+		<property name="business"><ref bean="virgenBusiness"/></property>
+	</bean>
+	
+	<bean name="/manageAlumno.vdc" class="com.dynamicdroides.vdc.services.login.controllers.AlumnosController" scope="request">
+		<property name="business"><ref bean="virgenBusiness"/></property>
+	</bean>
+	<bean name="/educadores.vdc" class="com.dynamicdroides.vdc.services.login.controllers.EducadoresController" scope="request">
+		<property name="business"><ref bean="virgenBusiness"/></property>
+	</bean>
+	<bean name="/menu.vdc" class="com.dynamicdroides.vdc.services.login.controllers.MenuController" scope="request">
+		<property name="menuBusiness"><ref bean="menuBusiness"/></property>
+   		<property name="extractor"><ref bean="wordExtractor"/></property>
+		<property name="pathToWords">
+		    <value>${services.word.path}</value>
+	    </property>
+	</bean>
+	
+	<bean name="/alergias.vdc" class="com.dynamicdroides.vdc.services.login.controllers.AlergiasController" scope="request">
+		<property name="alergiabusiness"><ref bean="alergiasBusiness"/></property>
+		<property name="business"><ref bean="virgenBusiness"/></property>
+		
+		
+	</bean>
+	
+	<bean name="/profesores.vdc" class="com.dynamicdroides.vdc.services.login.controllers.ProfesoresController" scope="request">
+		<property name="business"><ref bean="profesoresBusiness"/></property>
+		<property name="reader"><ref bean="excelReader"/></property>
+		<property name="pathToExcels">
+		    <value>${services.excel.path}</value>
+	    </property>
+				
+	</bean>
+	
+	<bean name="/observaciones.vdc" class="com.dynamicdroides.vdc.services.login.controllers.ObservacionesController" scope="request">
+		<property name="dao"><ref bean="observacionesDAO"/></property>
+	</bean>
+	
+	<bean name="/generaldata.vdc" class="com.dynamicdroides.vdc.services.login.controllers.DatosGeneralesController" scope="request">
+			<property name="business"><ref bean="virgenBusiness"/></property>
+	</bean>
+	
+	<bean name="/sendMessage.vdc" class="com.dynamicdroides.vdc.services.login.controllers.SendMessageController" scope="request">
+			<property name="business"><ref bean="virgenBusiness"/></property>
+	</bean>
+	 
+	<bean name="/promociones.vdc" class="com.dynamicdroides.vdc.services.login.controllers.PromocionesController" scope="request">
+			<property name="business"><ref bean="virgenBusiness"/></property>
+	</bean>
+	
+	<bean name="/upexcel.vdc" class="com.dynamicdroides.vdc.services.login.controllers.UploadExcelController" scope="request">
+		<property name="business"><ref bean="virgenBusiness"/></property>
+		<property name="reader"><ref bean="excelReader"/></property>
+		<property name="pathToExcels">
+		    <value>${services.excel.path}</value>
+	    </property>
+				
+	</bean>
+	<bean name="/upimages.vdc" class="com.dynamicdroides.vdc.services.login.controllers.UploadImageController" scope="request">
+		<property name="business"><ref bean="virgenBusiness"/></property>
+		<property name="pathToImages">
+		    <value>${services.imagenes.path}</value>
+	    </property>
+	</bean>
+					
+	<bean id="excelReader" class="com.dynamicdroides.vdc.services.tools.ExcelReader">
+		<property name="dao"><ref bean="alumnosDAO"/></property>	    
+		<property name="profdao"><ref bean="profesoresDAO"/></property>	    
+				
+		
+	</bean>
+	<bean id="virgenBusiness" class="com.dynamicdroides.vdc.services.business.VirgenDelCarmenBusiness">
+		<property name="cursosDAO"><ref bean="cursosDAO"/></property>	    
+		<property name="alumnosDAO"><ref bean="alumnosDAO"/></property>	    
+		<property name="comportamientoDAO"><ref bean="regComportamientoDAO"/></property>	    
+		<property name="comidasDAO"><ref bean="regComidasDAO"/></property>	    
+		<property name="usuarioDAO"><ref bean="usuariosDAO"/></property>	    
+		<property name="usuarioAlumnoDAO"><ref bean="usuariosalumnosDAO"/></property>	    
+		<property name="mailTool"><ref bean="mailTool"/></property>	    
+				
+		
+	</bean>
+	<bean id="asistenciaBusiness" class="com.dynamicdroides.vdc.services.business.AsistenciaBusiness">
+		<property name="dao"><ref bean="asistenciaDAO"/></property>	    
+	
+    </bean>
+		
+	
+	<bean id="wordExtractor" class="com.dynamicdroides.vdc.services.business.WordExtractor">
+		<property name="plantillaBusiness"><ref bean="plantillaBusiness"/></property>
+	</bean>
+	<bean id="plantillaBusiness" class="com.dynamicdroides.vdc.services.business.PlantillaBusiness">
+		<property name="dao"><ref bean="menuDAO"/></property>	    
+	
+    </bean>
+	<bean id="menuBusiness" class="com.dynamicdroides.vdc.services.business.MenuBusiness">
+		<property name="dao"><ref bean="menuDAO"/></property>	    
+    </bean>
+	<bean id="profesoresBusiness" class="com.dynamicdroides.vdc.services.business.ProfesoresBusiness">
+		<property name="dao"><ref bean="profesoresDAO"/></property>	    
+    </bean>
+	  <bean id="datosgeneralesBusiness" class="com.dynamicdroides.vdc.services.business.DatosGeneralesBusiness">
+		<property name="dao"><ref bean="datosgeneralesDAO"/></property>	    
+    </bean>  		
+	<bean id="alergiasBusiness" class="com.dynamicdroides.vdc.services.business.AlergiasBusiness">
+		<property name="dao"><ref bean="alergiasDAO"/></property>	    
+    </bean>
+			    		
+				
+<!-- 	<bean name="/login.htm" class="com.dynamicdroides.spring.controllers.LoginController" scope="request"> -->
+	
+<!-- 	</bean> -->
+
+
+	<bean id="properties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations"><list>
+		<value>classpath:/vdc.properties</value>
+	</list></property>  
+	</bean>
+	
+	<import resource="virgin-dao.xml"/>
+	<import resource="virgin-common.xml"/>
+
+</beans>

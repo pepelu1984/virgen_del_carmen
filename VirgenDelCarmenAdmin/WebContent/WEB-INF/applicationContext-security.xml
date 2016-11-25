@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+   xmlns:beans="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans classpath:spring-beans-3.2.xsd
+                       http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+ 
+ 
+    <global-method-security pre-post-annotations="enabled" />
+
+ <http auto-config='true'>
+ 
+  	<session-management invalid-session-url="/login.vdc">
+    	 <concurrency-control max-sessions="100"
+                         error-if-maximum-exceeded="false"
+                         expired-url="/login.vdc?error=3"/>
+	</session-management>
+	
+    <intercept-url pattern="/js/jquery/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>    
+    <intercept-url pattern="/index.html" access="IS_AUTHENTICATED_ANONYMOUSLY"/>    
+    <intercept-url pattern="/css/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>    
+    <intercept-url pattern="/login.vdc" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+    
+   <intercept-url pattern="/images/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+   <intercept-url pattern="/img/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+   <intercept-url pattern="/img/jack/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+   
+    <intercept-url pattern="/**" access="ROLE_ES" />
+	
+    <form-login login-page='/login.vdc' default-target-url='/index.vdc'
+         authentication-failure-url="/login.vdc?error=1" always-use-default-target='true'/>
+
+
+    
+  </http>
+    
+ <authentication-manager alias="dynamicSecurity">
+    <authentication-provider ref="autenticaProviderDynamic"/>
+</authentication-manager>
+
+	
+ <beans:bean id="autenticaProviderDynamic"
+     class="com.dynamicdroides.vdc.services.security.autentication.AutenticaProvider">
+    <beans:property name="userName"> <beans:value>${services.user}</beans:value></beans:property>
+    <beans:property name="password"><beans:value>${services.pwd}</beans:value></beans:property>
+    
+</beans:bean>
+
+
+</beans:beans>
