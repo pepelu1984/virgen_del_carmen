@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+>
+<description></description>
+
+
+	<bean id="context" class="com.dynamicdroides.party.standalone.SpringApplicationContext"/>
+	
+<!-- TRANSACTIONS -->
+
+	
+
+<!-- CONTROLLERS -->
+	
+	
+<!-- 	<bean name="/index.htm" class="com.dynamicdroides.spring.controllers.IndexController" scope="request"> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean name="/admin/maestros/usuarios.htm" class="com.dynamicdroides.spring.controllers.AdminUsuariosController" scope="request"> -->
+<!-- 		<property name="manager"> -->
+<!-- 			<ref bean="pfmrLManager" /> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+
+<!--admin  IMC -->
+<!-- 	<bean name="/admin/maestros/imc.htm" class="com.dynamicdroides.spring.controllers.AdminIMCController" scope="request"> -->
+<!-- 		<property name="manager"> -->
+<!-- 			<ref bean="pfmrIManager" /> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+	
+<!-- 	<bean name="/login.htm" class="com.dynamicdroides.spring.controllers.LoginController" scope="request"> -->
+	
+<!-- 	</bean> -->
+
+	<bean id="alumnosBusiness" class="com.dynamicdroides.virgendelcarmen.manager.AlumnosBusiness">
+		<property name="alumnosDAO"><ref bean="alumnosDAO"/></property>
+	</bean>
+	
+	<import resource="virgin-dao.xml"/>
+	<import resource="virgin-common.xml"/>
+
+</beans>

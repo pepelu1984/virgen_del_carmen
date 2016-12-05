@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://manager.virgendelcarmen.dynamicdroides.com/" targetNamespace="http://manager.virgendelcarmen.dynamicdroides.com/" version="1.0">
+
+  <xs:element name="IOException" type="tns:IOException"/>
+
+  <xs:element name="addAlumno" type="tns:addAlumno"/>
+
+  <xs:element name="addAlumnoResponse" type="tns:addAlumnoResponse"/>
+
+  <xs:element name="addComidas" type="tns:addComidas"/>
+
+  <xs:element name="addComidas1" type="tns:addComidas1"/>
+
+  <xs:element name="addComidas1Response" type="tns:addComidas1Response"/>
+
+  <xs:element name="addComidasResponse" type="tns:addComidasResponse"/>
+
+  <xs:element name="addComportamiento" type="tns:addComportamiento"/>
+
+  <xs:element name="addComportamiento1" type="tns:addComportamiento1"/>
+
+  <xs:element name="addComportamiento1Response" type="tns:addComportamiento1Response"/>
+
+  <xs:element name="addComportamientoResponse" type="tns:addComportamientoResponse"/>
+
+  <xs:element name="addCurso" type="tns:addCurso"/>
+
+  <xs:element name="addCursoResponse" type="tns:addCursoResponse"/>
+
+  <xs:element name="alumnoBean" type="tns:alumnoBean"/>
+
+  <xs:element name="checkAndGetUser" type="tns:checkAndGetUser"/>
+
+  <xs:element name="checkAndGetUserResponse" type="tns:checkAndGetUserResponse"/>
+
+  <xs:element name="checkUser" type="tns:checkUser"/>
+
+  <xs:element name="checkUserAccess" type="tns:checkUserAccess"/>
+
+  <xs:element name="checkUserAccessResponse" type="tns:checkUserAccessResponse"/>
+
+  <xs:element name="checkUserResponse" type="tns:checkUserResponse"/>
+
+  <xs:element name="finishEnvioAsistencia" type="tns:finishEnvioAsistencia"/>
+
+  <xs:element name="finishEnvioAsistenciaResponse" type="tns:finishEnvioAsistenciaResponse"/>
+
+  <xs:element name="finishEnvioComidas" type="tns:finishEnvioComidas"/>
+
+  <xs:element name="finishEnvioComidasResponse" type="tns:finishEnvioComidasResponse"/>
+
+  <xs:element name="finishEnvioComportamiento" type="tns:finishEnvioComportamiento"/>
+
+  <xs:element name="finishEnvioComportamientoResponse" type="tns:finishEnvioComportamientoResponse"/>
+
+  <xs:element name="getAluBeanFromAlumno" type="tns:getAluBeanFromAlumno"/>
+
+  <xs:element name="getAluBeanFromAlumnoResponse" type="tns:getAluBeanFromAlumnoResponse"/>
+
+  <xs:element name="getAlumnos" type="tns:getAlumnos"/>
+
+  <xs:element name="getAlumnosAsisten" type="tns:getAlumnosAsisten"/>
+
+  <xs:element name="getAlumnosAsistenResponse" type="tns:getAlumnosAsistenResponse"/>
+
+  <xs:element name="getAlumnosBy" type="tns:getAlumnosBy"/>
+
+  <xs:element name="getAlumnosByCurso" type="tns:getAlumnosByCurso"/>
+
+  <xs:element name="getAlumnosByCursoResponse" type="tns:getAlumnosByCursoResponse"/>
+
+  <xs:element name="getAlumnosByDate" type="tns:getAlumnosByDate"/>
+
+  <xs:element name="getAlumnosByDateResponse" type="tns:getAlumnosByDateResponse"/>
+
+  <xs:element name="getAlumnosByResponse" type="tns:getAlumnosByResponse"/>
+
+  <xs:element name="getAlumnosForComedor" type="tns:getAlumnosByResponse"/>
+
+  <xs:element name="getAlumnosForComedorResponse" type="tns:getAlumnosForComedorResponse"/>
+
+  <xs:element name="getAlumnosResponse" type="tns:getAlumnosResponse"/>
+
+  <xs:element name="getCurso" type="tns:getCurso"/>
+
+  <xs:element name="getCursoResponse" type="tns:getCursoResponse"/>
+
+  <xs:element name="getCursos" type="tns:getCursos"/>
+
+  <xs:element name="getCursosResponse" type="tns:getCursosResponse"/>
+
+  <xs:element name="getObservaciones" type="tns:getObservaciones"/>
+
+  <xs:element name="getObservacionesResponse" type="tns:getObservacionesResponse"/>
+
+  <xs:element name="getProfesores" type="tns:getProfesores"/>
+
+  <xs:element name="getProfesoresResponse" type="tns:getProfesoresResponse"/>
+
+  <xs:element name="isDataComidasFilled" type="tns:isDataComidasFilled"/>
+
+  <xs:element name="isDataComidasFilledResponse" type="tns:isDataComidasFilledResponse"/>
+
+  <xs:element name="isDataComportamientoFilled" type="tns:isDataComportamientoFilled"/>
+
+  <xs:element name="isDataComportamientoFilledResponse" type="tns:isDataComportamientoFilledResponse"/>
+
+  <xs:complexType name="finishEnvioComidas">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="finishEnvioComidasResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="finishEnvioComportamiento">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="finishEnvioComportamientoResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="IOException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="finishEnvioAsistencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="finishEnvioAsistenciaResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="addComidas1">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element name="arg2" type="xs:int"/>
+      <xs:element minOccurs="0" name="arg3" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg4" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg5" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg6" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addComidas1Response">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getObservaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getObservacionesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlumnosBy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg3" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlumnosByResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkUserResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAluBeanFromAlumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:alumnos"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:dateTime"/>
+      <xs:element name="arg3" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="arg4" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="alumnos">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractAlumnos">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType abstract="true" name="abstractAlumnos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidos" type="xs:string"/>
+      <xs:element minOccurs="0" name="comedor" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="correopadres" type="xs:string"/>
+      <xs:element minOccurs="0" name="curso" type="xs:string"/>
+      <xs:element minOccurs="0" name="hasalergias" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="idalumno" type="xs:int"/>
+      <xs:element minOccurs="0" name="listaalergias" type="xs:string"/>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAluBeanFromAlumnoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:alumnoBean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="alumnoBean">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractAlumnos">
+        <xs:sequence>
+          <xs:element name="comportamientoFilled" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="comportamientos" type="xs:string"/>
+          <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="addAlumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg3" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg4" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addAlumnoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCurso">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCursoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addComportamiento1">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element name="arg2" type="xs:int"/>
+      <xs:element minOccurs="0" name="arg3" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg4" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg5" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg6" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg7" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addComportamiento1Response">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isDataComidasFilled">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg3" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isDataComidasFilledResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlumnosForComedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg3" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlumnosForComedorResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCursos">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getCursosResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isDataComportamientoFilled">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg3" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isDataComportamientoFilledResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addComportamiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element name="arg2" type="xs:int"/>
+      <xs:element minOccurs="0" name="arg3" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg4" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg5" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg6" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addComportamientoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkUserAccess">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkUserAccessResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:usuarios"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="usuarios">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractUsuarios">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType abstract="true" name="abstractUsuarios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidos" type="xs:string"/>
+      <xs:element minOccurs="0" name="email" type="xs:string"/>
+      <xs:element minOccurs="0" name="iduser" type="xs:int"/>
+      <xs:element minOccurs="0" name="isadmin" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkAndGetUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element name="arg2" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkAndGetUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:usuarios"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addCurso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addCursoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlumnos">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlumnosResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlumnosByDate">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg3" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg4" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlumnosByDateResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlumnosByCurso">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg3" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg4" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlumnosByCursoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlumnosAsisten">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg3" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlumnosAsistenResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addComidas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element name="arg2" type="xs:int"/>
+      <xs:element minOccurs="0" name="arg3" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg4" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg5" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addComidasResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfesores">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfesoresResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:profesores"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="profesores">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractProfesores">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType abstract="true" name="abstractProfesores">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidos" type="xs:string"/>
+      <xs:element minOccurs="0" name="email" type="xs:string"/>
+      <xs:element minOccurs="0" name="idprofesor" type="xs:int"/>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+      <xs:element minOccurs="0" name="telefono" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
